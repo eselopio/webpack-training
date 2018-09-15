@@ -1,7 +1,8 @@
-body{
-    margin: 0%;
-    background-color: #444
-}
+$bg-color = green
+
+body
+    margin: 0%
+    background-color: $bg-color
 
 .profile {
     display: flex;
@@ -9,18 +10,19 @@ body{
     justify-content: center;
     height: 100vh;
     flex-flow: column;
+}
+img {
+    border-radius: 100%;
+    border: 5px;
+    width: 300px;
+    box-shadow:  0 0 20px black;
+}
 
-    img {
-        border-radius: 100%;
-        width: 300px;
-        box-shadow:  0 0 20px black;
-    }
-    
-    h1 {
-        color: red;
-        font-size: 5em;
-        font-family: sans-serif;
-        text-shadow: 0 0 20px black;
-    }
+h1 {
+    color: white;
+    font-size: 5em;
+    font-family: sans-serif;
+    text-shadow: 0 0 20px black;
+    text-align: center;
 }
 

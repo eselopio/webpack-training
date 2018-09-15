@@ -15,7 +15,7 @@ module.exports = {
     devServer: {
         contentBase: "dist",
         overlay: true,
-        hot: true,
+        //hot: true,
         stats: {
             colors: true
         }
@@ -41,28 +41,23 @@ module.exports = {
             },
             {
                 test: /\.sass$/,
-                use: [{
-                        loader: "style-loader"
-                    },
-                    {
-                        loader: "css-loader"
-                    },
-                    {
-                        loader: "sass-loader"
-                    }
-                ]
+                use: [
+                      { loader: "style-loader" },
+                      { loader: "css-loader" },
+                      { loader: "sass-loader"}
+                    ]
             },
             {
                 test: /\.styl$/,
-                use: [{
-                        loader: "style-loader"
+                use: [
+                    { loader: "style-loader"},
+                    { loader: "css-loader",
+                        options: {
+                            importLoaders: 1
+                        }
                     },
-                    {
-                        loader: "css-loader"
-                    },
-                    {
-                        loader: "stylus-loader"
-                    }
+                    { loader: "postcss-loader"},
+                    { loader: "stylus-loader"}
                 ]
             },
             {

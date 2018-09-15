@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/eselopio/webpack-training#readme",
   "dependencies": {
+    "autoprefixer": "^9.1.5",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -38,6 +39,9 @@
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "node-sass": "^4.9.3",
+    "postcss": "^7.0.2",
+    "postcss-cli": "^6.0.0",
+    "postcss-loader": "^3.0.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-hot-loader": "^4.0.0",
@@ -50,5 +54,8 @@
     "webpack-dev-middleware": "^3.2.0",
     "webpack-dev-server": "^3.1.8",
     "webpack-hot-middleware": "^2.23.1"
+  },
+  "devDependencies": {
+    "precss": "^3.1.2"
   }
 }
