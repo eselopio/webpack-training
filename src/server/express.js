@@ -22,7 +22,7 @@ server.use(webpackHotMiddleware)
 const statucMiddleware = express.static("dist")
 
 server.use(statucMiddleware);
-
+ 
 server.listen(8080, ()=>{
     console.log("Server is lintenig");
 });

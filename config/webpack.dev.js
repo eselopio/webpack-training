@@ -16,7 +16,7 @@ module.exports = {
         contentBase: "dist",
         overlay: true,
         hot: true,
-        stats:{
+        stats: {
             colors: true
         }
     },
@@ -24,14 +24,12 @@ module.exports = {
     module: {
         rules: [{
                 test: /\.js$/,
-                use: [
-                    {
-                        loader: "babel-loader"
-                    }
-                ],
+                use: [{
+                    loader: "babel-loader"
+                }],
                 exclude: /node_modules/
-            }
-            ,{
+            },
+            {
                 test: /\.css$/,
                 use: [{
                         loader: "style-loader"
@@ -42,15 +40,52 @@ module.exports = {
                 ]
             },
             {
-                test: /\.html$/,
-                use: [
+                test: /\.sass$/,
+                use: [{
+                        loader: "style-loader"
+                    },
                     {
-                        loader: "html-loader",
-                        options: {
-                            attrs: ["img:src"]
-                        }
+                        loader: "css-loader"
+                    },
+                    {
+                        loader: "sass-loader"
                     }
                 ]
+            },
+            {
+                test: /\.styl$/,
+                use: [{
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader"
+                    },
+                    {
+                        loader: "stylus-loader"
+                    }
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [{
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader"
+                    },
+                    {
+                        loader: "less-loader"
+                    }
+                ]
+            },
+            {
+                test: /\.html$/,
+                use: [{
+                    loader: "html-loader",
+                    options: {
+                        attrs: ["img:src"]
+                    }
+                }]
             },
             {
                 test: /\.(jpg|gif|png)$/,
@@ -63,7 +98,7 @@ module.exports = {
             }
         ]
     },
-    plugins:[
+    plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HTMLWebpackPlugin({
             template: "./src/index.html"
